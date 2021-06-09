@@ -1,0 +1,124 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+  background-color: #747a87;
+}
+.menu_items {
+  float: left;
+  padding: 16px;
+  color: #222730;
+  border-right: 0px;
+  text-decoration: none;
+}
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+.Addmovie {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+  height: 350px;
+}
+.Add_title{
+  margin-bottom: 4px;
+  color: #c1b4b4;
+}
+.Horizontal_Line{
+  height: 2px;
+  width: 100%;
+  background-color: #1f3d6d;
+}
+.add_movie{
+  margin-top: 40px;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+.add_movie label{
+  display: block;
+	margin: 0px 0px 20px 0px;
+}
+.add_movie label > span{
+  width: 100px;
+	font-weight: bold;
+	float: left;
+	padding-top: 8px;
+	padding-right: 5px;
+  color: #EAD5E1;
+}
+.add_movie .input_field{
+  width: 80%;
+	border: 2px solid #C2C2C2;
+	border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+.selectContainer{
+  width: 100%;
+  text-align: center;
+}
+#moviesToEdit {
+  width: 50%;
+	border: 2px solid #C2C2C2;
+	border-radius: 3px;
+	padding: 7px;
+	outline: none;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.add_movie .input_field:focus{
+  border: 2px solid #1f3d6d;
+}
+.add_movie input[type=submit],
+.add_movie input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #1f3d6d;
+	color: #fff;
+	border-radius: 3px;
+}
+.add_movie input[type=submit]:hover,
+.add_movie input[type=button]:hover{
+	background: #4d73af;
+	color: #fff;
+}
+
+.footer {
+  height: 40px;
+  background-color: white;
+  margin-top: 70px;
+}
+
+.FooterLeft {
+  margin: 7px 15px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 45%;
+}
+.FooterRight {
+  text-align: right;
+  margin: 7px 4px;
+  padding: 3px;
+  width: 50%;
+}
+
+.border{
+  border-left: 1px solid black;
+}
+
+/*After this is the codes repeated in many classes*/
+
+.TextColor{color: #222730;}
+.decoration{text-decoration: none;}
+.FooterLinksAndTitle{padding: 5px;}
+.DetailsANDMenuColor{background-color: #747a87;}
+.LeftFloat{float: left;}
+.FullWidth{width: 100%;}

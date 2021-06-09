@@ -1,0 +1,81 @@
+.data
+    ID_user: 		.asciiz "admin\n"
+    Psw_user: 		.asciiz "car1234\n"
+    askID_msg: 		.asciiz "Please enter your username ID: "
+    askPsw_msg: 	.asciiz "Please enter your password: "
+    wrongInput_msg: 	.asciiz "Please enter the correct username or password.\n"
+    correctInput_msg: 	.asciiz "Succesful!\n"
+    input_ID: 		.space 10
+    input_Psw: 		.space 10
+    
+.text
+
+#Login Function
+
+    #prompt user ID
+    prompt_ID:
+    
+    la		$s2, input_ID
+    la		$s3, ID_user
+    li 		$t8, 0		#loop control
+    move 	$t1, $s2
+
+    #prompt message for ID
+    la 		$a0, askID_msg
+    li 		$v0, 4
+    syscall
+
+    #read ID
+    move 	$a0, $t1
+    li 		$a1, 10
+    li		 $v0, 8
+    syscall
+    jal strcmp 			#compare input
+
+    #prompt password
+    prompt_Psw:
+    la 		$s2, input_Psw
+    la 		$s3, Psw_user
+    li 		$t8, 1
+    move $t1, $s2
+
+    #prompt message for password
+    la 		$a0, askPsw_msg
+    li		$v0, 4
+    syscall
+
+    #read password
+    move 	$a0, $t1
+    li 		$a1, 10
+    li 		$v0, 8
+    syscall
+    jal strcmp			#compare input
+
+    #compare every character
+    strcmp:
+    lb 		$t2,($s2)
+    lb 		$t3,($s3)
+    bne 	$t2, $t3, compareNE	#when not equal
+    beq 	$t2, $zero, compareEq	#when equal
+    addi 	$s2, $s2,1 		#next character
+    addi 	$s3, $s3,1
+    j 		strcmp
+
+    #equal
+    compareEq:
+    beq 	$t8, $zero, prompt_Psw	#get to the prompt password after getting through prompt username
+    beq 	$t8, 1, end		#get to end when both creditentials are correct
+
+    #not equal
+    compareNE:
+    la $a0, wrongInput_msg
+    li $v0, 4
+    syscall
+    beq $t8, $zero, prompt_ID		#for ID label
+    beq $t8, 1, prompt_Psw		#for password label
+        
+        
+    end:
+    la	$a0, correctInput_msg
+    li	$v0, 10				#terminate program
+    syscall

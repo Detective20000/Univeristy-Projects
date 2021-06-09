@@ -1,0 +1,108 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+
+.FullWidth{width: 100%;}
+
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+  background-color: #747a87;
+}
+.menu_items {
+  float: left;
+  padding: 16px;
+  color: #222730;
+  border-right: 0px;
+  text-decoration: none;
+}
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+
+.Title{
+  color: #c1b4b4;
+  margin-bottom: 4px;
+}
+
+.Horizontal_Line{
+  height: 2px;
+  background-color: #1f3d6d;
+  width: 100%;
+}
+
+.Details{
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 250px;
+  width:80%;
+  font-size: 20px;
+  margin-top: 30px;
+}
+.right {
+  color: #c1b4b4;
+  width: 48%;
+  float: left;
+  display: inline-block;
+  padding: 7px;
+}
+
+.hidden{
+  color: #42f4f4;
+  display: none;
+}
+
+.left{
+  float: left;
+  width: 48%;
+  display: inline-block;
+  padding: 7px;
+  color: #c1b4b4;
+}
+
+
+.FAQText{
+  text-align: center;
+  color: #c1b4b4;
+}
+
+
+
+.footer {
+  height: 40px;
+  background-color: white;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.FooterLeft {
+  margin: 7px 15px;
+  width: 45%;
+  float: left;
+}
+.FooterRight {
+  text-align: right;
+  margin: 7px 4px;
+  padding: 3px;
+  width: 50%;
+  float: left;
+}
+
+.FooterButtons{
+  border-left: 1px solid black;
+  color: #222730;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.Nonborder
+{
+  color: #222730;
+  text-decoration: none;
+  padding: 5px;
+}

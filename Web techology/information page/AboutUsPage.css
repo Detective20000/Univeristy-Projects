@@ -1,0 +1,92 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+}
+
+.menu_items {
+  padding: 16px;
+  border-right: 0px;
+}
+
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+
+.Title{margin-bottom: 4px;}
+
+.Horizontal_Line{
+  height: 2px;
+  background-color: #1f3d6d;
+}
+
+.Details{
+  height: 250px;
+  width:90%;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.FAQText{text-align: center;}
+
+.VirtacalLine{
+    border-left: 4px solid rgba(255,255,255,1);
+    height: 275px;
+    margin-top: -25px;
+    filter: blur(1px);
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+.Info{float: right;}
+
+.footer {
+  height: 40px;
+  background-color: white;
+  margin-top: 285px;
+}
+
+.FooterLeft {
+  margin: 7px 15px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 45%;
+}
+.FooterRight {
+  text-align: right;
+  margin: 7px 4px;
+  padding: 3px;
+}
+
+.border{
+  border-left: 1px solid black;
+}
+
+
+/*After this is the codes repeated in many classes*/
+
+.TextColor{color: #222730;}
+.decoration{text-decoration: none;}
+.FooterLinksAndTitle{padding: 5px;}
+.DetailsANDMenuColor{background-color: #747a87;}
+.LeftFloat{float: left;}
+.FullWidth{width: 100%;}
+.DetailsDivSpace{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/*new added*/
+.DetailsColor{color: #c1b4b4;}
+.AbsolutePosition{position: absolute;}
+.TopSpace{margin-top: 5px;}
+.HalfWidth{width: 50%;}
+.LessThanHalfWidth{width: 40%;}

@@ -1,0 +1,145 @@
+body {
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+}
+.backvideo {
+  position: absolute;
+  width: 100%;
+  margin-top: -102px;
+}
+.first {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 580px;
+  text-align: center;
+}
+.first:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+.webname {
+  margin-top: 160px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 90px;
+}
+.webdisc {
+  margin-top: -50px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 40px;
+}
+.webbutton {
+  display: inline-block;
+  width: 200px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  padding: 14px 0px;
+  border-radius: 12px;
+  margin: 0px;
+}
+.webbutton:hover {
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
+.second {
+  width: 100%;
+  height: 550px;
+}
+.slidebar {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  background-color: #222730;
+}
+.movieContainer {
+  position: relative;
+  display: inline-block;
+  width: 203px;
+  border: 2px solid white;
+  border-radius: 7px;
+  margin: 12px 8px;
+  padding: 4px 8px;
+}
+.posterContainer {
+  width: 203px;
+  height: 300px;
+}
+.nameContainer {
+  text-align: center;
+  color: white;
+}
+.next {
+  width: 100%;
+  background-color: #787e8c;
+  display: inline-block;
+}
+.random {
+  width: 48%;
+  display: inline-block;
+  margin: 10px;
+  float: left;
+}
+.randomposter {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.random_details {
+  width: 70%;
+  float: left;
+  display: inline-block;
+}
+.inner_left {
+  float: left;
+  background-color: #505359;
+  margin: 2px 0px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 25%;;
+}
+.inner_right {
+  float: left;
+  display: inline-block;
+  margin: 3px 4px;
+  padding: 3px;
+  width: 65%;
+}
+.line {
+  display: block;
+  float: left;
+  margin-left: 15px;
+  width: 100%;
+}
+.lastnews {
+  width: 48%;
+  border: 2px solid #222730;
+  border-radius: 6px;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  float: left;
+}
+.newsbox {
+  border-bottom: 2px solid #222730;
+  padding: 2px 2px 0px 2px;
+  margin: 0px 2px 2px 2px;
+  color: black;
+}
+.newstitle {
+  margin-bottom: 0px;
+}
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
+.footer_first {
+  padding-top: 10px;
+  color: black;
+  text-align: center;
+}

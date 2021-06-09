@@ -1,0 +1,109 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+
+.FullWidth{width: 100%;}
+
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+  background-color: #747a87;
+}
+.menu_items {
+  float: left;
+  padding: 16px;
+  color: #222730;
+  border-right: 0px;
+  text-decoration: none;
+}
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+
+.Details{
+
+  text-align: center;
+  height: 250px;
+  width: 350px;
+  display: inline-block;
+  margin-left: 500px;
+  margin-top: 15px;
+  font-size: 20px;
+  background-color: #747a87;
+}
+
+.Title{
+  width: 100%;
+  color: #c1b4b4;
+  padding: 5px;
+}
+
+.Labels{
+  width: 100%;
+  color: #EAD5E1;
+  float: left;
+}
+
+.TextField{
+  width: 100%;
+  padding: 5px;
+}
+
+.input_field:focus{
+  border: 2px solid #1f3d6d;
+}
+
+.input_field{
+	border: 2px solid #C2C2C2;
+	border-radius: 3px;
+	padding: 7px;
+	outline: none;
+}
+
+.Submit{
+  margin-top: 10px;
+}
+.button{
+  width: 100px;
+  color: blue;
+}
+
+
+.footer {
+  height: 40px;
+  background-color: white;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.FooterLeft {
+  margin: 7px 15px;
+  width: 45%;
+  float: left;
+}
+.FooterRight {
+  text-align: right;
+  margin: 7px 4px;
+  padding: 3px;
+  width: 50%;
+  float: left;
+}
+
+.FooterButtons{
+  border-left: 1px solid black;
+  color: #222730;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.Nonborder
+{
+  color: #222730;
+  text-decoration: none;
+  padding: 5px;
+}

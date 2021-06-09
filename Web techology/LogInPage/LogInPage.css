@@ -1,0 +1,96 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+}
+
+.menu_items {
+  padding: 16px;
+  border-right: 0px;
+}
+
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+
+.Details{
+  height: 220px;
+  width:22%;
+  position: absolute;
+  margin-left: 36%;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.Title{
+  margin-left: 110px;
+  border: 2px solid black;
+  background-color: #1f3d6d;
+  color: #c1b4b4;
+}
+
+.Labels{
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #EAD5E1;
+}
+
+.ButtomSpace{
+  margin-bottom: 0px;
+}
+
+.Text_Area{
+  width: 60%;
+  margin-top: 25px;
+}
+
+.Submit{
+  display:inline-block;
+  margin-top: 10px;
+}
+.button{
+  width: 100px;
+  color: blue;
+}
+
+
+.footer {
+  height: 40px;
+  background-color: white;
+  margin-top: 285px;
+}
+
+.FooterLeft {
+  margin: 7px 15px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 45%;
+}
+.FooterRight {
+  text-align: right;
+  margin: 7px 4px;
+  padding: 3px;
+  width: 50%;
+}
+
+.border{border-left: 1px solid black;}
+
+/*After this is the codes repeated in many classes*/
+
+.TextColor{color: #222730;}
+.decoration{text-decoration: none;}
+.FooterLinksAndTitle{padding: 5px;}
+.DetailsANDMenuColor{background-color: #747a87;}
+.LeftFloat{float: left;}
+.FullWidth{width: 100%;}
+
+/*new added*/
+.TopSpace{margin-top: 5px;}

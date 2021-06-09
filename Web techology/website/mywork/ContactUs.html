@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="ContactUs.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="home.html"><img class="FullWidth" src="images/fast--furious-6-2013.jpeg" alt=""></a>
+    </div>
+    <div class="menu">
+      <a class="menu_items" href="home.html">Home</a>
+      <a class="menu_items" href="movielist.html">Movie List</a>
+      <a class="menu_items" href="#">Movie News</a>
+      <a class="menu_items" href="ContactUs.html">Contact Us</a>
+      <a class="menu_items" href="AboutUsPage.html">About Us</a>
+    </div>
+    
+    <h1 class="Title">Contact Us</h1>
+
+    <div class="Horizontal_Line">
+    </div>
+
+    <div class="Details">
+
+      <div class="Form">
+        <div>
+          Name:
+        </div>
+        <input class="inner_right" type="text" id="name">
+        <div>
+          Email:
+        </div>
+        <input class="inner_right" type="text" id="email">
+        <div>
+          Details:
+        </div>
+
+        <textarea class="inner_right" name="name" rows="8" cols="60" id="contect"></textarea>
+        <button class="Submit" type="button" name="button" id="btn">Submit</button>
+      </div>
+
+      <div class="Information">
+        <li class="contactInfo">Manager Email: iacmohanad@outlook.com</li>
+        <li class="contactInfo">Phone : 01111407843</li>
+        <li class="contactInfo">telephone : 01111407843</li>
+        <li class="contactInfo">address:</li>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37896.60228858985!2d101.70920133117681!3d3.253287619967544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc38c2f70795af%3A0xf808897bf1163a3!2sInternational+Islamic+University+Malaysia!5e0!3m2!1sen!2smy!4v1544974604040" frameborder="0" allowfullscreen class="googleMap"></iframe>
+      </div>
+  </div>
+
+  <div class="footer">
+      <div class="FooterLeft">
+        Copyright @ Suhaib & Muhannad
+      </div>
+      <div class="FooterRight">
+        <a href="LogInPage.html" class="Nonborder">LogInAdmin</a>
+        <a href="ContactUs.html" class="FooterButtons">ContactUs</a>
+        <a href="AboutUsPage.html" class="FooterButtons">AboutUs</a>
+      </div>
+  </div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    function myMap() {
+      var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850),
+        zoom:5
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    };
+
+    $("#btn").click(function(){
+      var templateParams = {
+        name: $("#name").val(),
+        notes: $("#email").val() + "\n" + $("#contect").val()
+      };
+      console.log(templateParams.name);
+      console.log(templateParams.notes);
+      alert("email Sent");
+      emailjs.init("user_082pAfmrTCcS6VujOEN7c");
+      emailjs.send("Jinx", "template_YOrbVBCP", templateParams);
+    });
+  </script>
+</body>
+</html>

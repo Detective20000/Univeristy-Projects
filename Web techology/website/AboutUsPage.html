@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="AboutUsPage.css">
+    <title>About Us</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href="home.html"><img class="FullWidth" src="images/fast--furious-6-2013.jpeg" alt=""></a>
+    </div>
+    <div class="menu">
+      <a class="menu_items" href="home.html">Home</a>
+      <a class="menu_items" href="movielist.html">Movie List</a>
+      <a class="menu_items" href="#">Movie News</a>
+      <a class="menu_items" href="ContactUs.html">Contact Us</a>
+      <a class="menu_items" href="AboutUsPage.html">About Us</a>
+    </div>
+
+
+
+    <div class="Details">
+
+      <h1 class="Title">About Us</h1>
+
+      <div class="Horizontal_Line">
+      </div>
+      <div class="right">
+        <p class="FAQText" id="FAQText">This Is F&Q:</p>
+        <p id="question1" class="curser">Does it cost to use the site?</p>
+        <p id="answer1" class="hidden curser">No, it is free to use our website.</p>
+        <p id="question2" class="curser">How can i find movie?</p>
+        <p id="answer2" class="hidden curser">You can click on search and type your movie name. Or go to main page and click on movie list.</p>
+        <p id="question3" class="curser">How is this different from other websites?</p>
+        <p id="answer3" class="hidden curser">Movie master allow users to easly find movies and it display random movie in main page each time you enter</p>
+        <p id="question4" class="curser">How is quality of movie?</p>
+        <p id="answer4" class="hidden curser">It has high quality. which will allow you to keep watching without stop.</p>
+        <p id="question5" class="curser">How can i contact movie master?</p>
+        <p id="answer5" class="hidden curser">press on contact us. It will display contact form and it will display our information to be contacted.</p>
+      </div>
+
+      <div class="left">
+        <p>Welcome to movie master. This website is created to fulfill all needs of users about movies. Users can find
+        any movie they wish to watch. We have all types of movies from different ages. We also, have life movies or
+      anime movies. Please feel very to watch movies in our website.</p>
+        <br>
+        <p>Workerd on this WebSite:</p>
+        <li>Mahanad</li>
+        <li>Suhaib</li>
+      </div>
+    </div>
+
+    <div class="footer">
+        <div class="FooterLeft">
+          Copyright @ Suhaib & Muhannad
+        </div>
+        <div class="FooterRight">
+          <a href="LogInPage.html" class="Nonborder">LogInAdmin</a>
+          <a href="ContactUs.html" class="FooterButtons">ContactUs</a>
+          <a href="AboutUsPage.html" class="FooterButtons">AboutUs</a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      $("#question1").click(function(){
+        $("#answer2").hide();
+        $("#answer3").hide();
+        $("#answer4").hide();
+        $("#answer5").hide();
+        $("#answer1").toggle();
+      });
+
+      $("#question2").click(function(){
+        $("#answer1").hide();
+        $("#answer3").hide();
+        $("#answer4").hide();
+        $("#answer5").hide();
+        $("#answer2").toggle();
+      });
+
+      $("#question3").click(function(){
+        $("#answer1").hide();
+        $("#answer2").hide();
+        $("#answer4").hide();
+        $("#answer5").hide();
+        $("#answer3").toggle();
+      });
+
+      $("#question4").click(function(){
+        $("#answer1").hide();
+        $("#answer2").hide();
+        $("#answer3").hide();
+        $("#answer5").hide();
+        $("#answer4").toggle();
+      });
+
+      $("#question5").click(function(){
+        $("#answer1").hide();
+        $("#answer2").hide();
+        $("#answer3").hide();
+        $("#answer4").hide();
+        $("#answer5").toggle();
+      });
+    </script>
+  </body>
+</html>

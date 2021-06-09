@@ -1,0 +1,112 @@
+body {
+  background-color: #222730;
+  margin: 0px;
+}
+.menu {
+  margin-top: -5px;
+  height: 50px;
+  border: 0px;
+  background-color: #747a87;
+}
+.menu_items {
+  float: left;
+  padding: 16px;
+  color: #222730;
+  border-right: 0px;
+  text-decoration: none;
+}
+.menu_items:hover {
+  color: #222730;
+  background-color: #a6a8ad;
+  padding-bottom: 13px;
+  border-bottom: 3px solid #0b2b77;
+}
+.headerimg {
+  width: 100%;
+}
+.poster {
+  float: left;
+  width: 15%;
+}
+.info_details {
+  float: left;
+  width: 85%;
+  height: 300px;
+  display: inline-block;
+}
+.inner_left {
+  float: left;
+  background-color: #505359;
+  margin: 2px 0px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 10%;
+}
+.inner_right {
+  float: left;
+  display: inline-block;
+  margin: 3px 4px;
+  padding: 3px;
+  width: 85%;
+}
+.info {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+  height: 350px;
+}
+.line {
+  display: block;
+  margin-left: 15px;
+  width: 100%;
+}
+.player {
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-bottom: 100px;
+  width: 76%;
+  height: 560px;
+}
+.player_area{
+  margin-top: 30px;
+  border: 0px;
+}
+
+.Title_Color{
+  color: #c1b4b4;
+}
+.Right_Color{
+  /*color: #8277f9;*/
+  color: #EAD5E1;
+}
+
+.Left_Color{
+  color: #EAD5E1;
+}
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
+.footer_first {
+  padding-top: 10px;
+  color: black;
+  text-align: center;
+}
+.Horizontal_Line{
+  height: 2px;
+  width: 100%;
+  background-color: #1f3d6d;
+}
+.TopSpace{
+  margin-top: 20px;
+}
+
+.info_title{
+  margin-bottom: 4px;
+}
+.SecondPage{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 50px;
+}

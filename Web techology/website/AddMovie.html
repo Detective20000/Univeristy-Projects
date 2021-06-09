@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="AddMovie.css">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <a href="home.html"><img class="FullWidth" src="images/fast--furious-6-2013.jpeg" alt=""></a>
+    </div>
+    <div class="menu">
+      <a class="menu_items" href="home.html">Home</a>
+      <a class="menu_items" href="movielist.html">Movie List</a>
+      <a class="menu_items" href="#">Movie News</a>
+      <a class="menu_items" href="ContactUs.html">Contact Us</a>
+      <a class="menu_items" href="AboutUsPage.html">About Us</a>
+    </div>
+
+    <div class="Addmovie">
+      <h1 class="Add_title" >Add new Movie</h1>
+      <div class="Horizontal_Line">
+      </div>
+      <div class="add_movie">
+        <div class="selectContainer">
+          <select id="moviesToEdit" name="moviesToEdit">
+            <option value="New" selected>New</option>
+          </select>
+        </div>
+        <label for="movie_title"><span>Movie title: </span><input type="text" class="input_field" id="movie_title" name="movie_title" value=""></label>
+        <label for="release_date"><span>Release Date: </span><input type="text" class="input_field" id="release_date" name="release_date" value=""></label>
+        <label for="genres"><span>Genres: </span><input type="text" class="input_field" id="genres" name="genres" value=""></label>
+        <label for="imdb_rating"><span>Imdb Rating: </span><input type="text" class="input_field" id="imdb_rating" name="imdb_rating" value=""></label>
+        <label for="age"><span>Age: </span><input type="text" class="input_field" id="age" name="age" value=""></label>
+        <label for="duration"><span>Duration: </span><input type="text" class="input_field" id="duration" name="duration" value=""></label>
+        <label for="language"><span>Language: </span><input type="text" class="input_field" id="language" name="language" value=""></label>
+        <label for="director"><span>Director: </span><input type="text" class="input_field" id="director" name="director" value=""></label>
+        <label for="image_url"><span>Image URL: </span><input type="text" class="input_field" id="image_url" name="director" value=""></label>
+        <label for="video_url"><span>Video URL: </span><input type="text" class="input_field" id="video_url" name="director" value=""></label>
+        <label for="story"><span>Story: </span><textarea class="input_field" id="story" name="story" rows="6"></textarea></label>
+        <label><span> </span><input id="submit" type="submit" value="Submit" /></label>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyALpeeu3rsisiRBinkKEO7aHYMmscyd5oU",
+        authDomain: "movie-webtech.firebaseapp.com",
+        databaseURL: "https://movie-webtech.firebaseio.com",
+        projectId: "movie-webtech",
+        storageBucket: "movie-webtech.appspot.com",
+        messagingSenderId: "559745020967"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+
+      var dropMenue = $("#moviesToEdit");
+      var database = firebase.database();
+      var btn = $("#submit");
+      var datakey = "";
+
+
+    //  $(document).ready(function(){
+        database.ref().child("movies").on("value", function(data){
+          $.each(data.val(), function(i, movie){
+            dropMenue.append("<option value=\"" + movie.Key + "\">" + movie.movie_title + "</option>");
+          });
+        });
+  //    });
+
+
+
+      dropMenue.on("change", function(){
+        if (this.value=="New") {
+          $('#movie_title').val("");
+          $('#release_date').val("");
+          $('#genres').val("");
+          $('#imdb_rating').val("");
+          $('#age').val("");
+          $('#duration').val("");
+          $('#language').val("");
+          $('#director').val("");
+          $('#story').val("");
+          $('#image_url').val("");
+          $('#video_url').val("");
+          datakey = "";
+        }else {
+          database.ref().child("movies/"+this.value).on("value", function(data){
+            thedata = data.val();
+            $('#movie_title').val(thedata.movie_title);
+            $('#release_date').val(thedata.release_date);
+            $('#genres').val(thedata.genres);
+            $('#imdb_rating').val(thedata.imdb_rating);
+            $('#age').val(thedata.age);
+            $('#duration').val(thedata.duration);
+            $('#language').val(thedata.language);
+            $('#director').val(thedata.director);
+            $('#story').val(thedata.story);
+            $('#image_url').val(thedata.image_url);
+            $('#video_url').val(thedata.video_url);
+            datakey = thedata.Key;
+          });
+        }
+      });
+      btn.on("click", function(){
+
+        //add drop down menu to edit
+
+        if (datakey=="") {
+          datakey = firebase.database().ref().child('movies').push().key;
+          var newmovie = {
+            Key : datakey,
+            movie_title: $('#movie_title').val(),
+            release_date: $('#release_date').val(),
+            genres: $('#genres').val(),
+            imdb_rating: $('#imdb_rating').val(),
+            age: $('#age').val(),
+            duration: $('#duration').val(),
+            language: $('#language').val(),
+            director: $('#director').val(),
+            story: $('#story').val(),
+            image_url: $('#image_url').val(),
+            video_url: $('#video_url').val()
+          };
+
+          var datawithkey = {};
+          datawithkey[datakey]= newmovie;
+          database.ref('movies').update(datawithkey);
+          $(".add_movie").html("<div class=\"selectContainer\">  <p id=\"moviesToEdit\" >Thank You!</p></div>");
+
+        }else {
+          var newmovie = {
+            Key : datakey,
+            movie_title: $('#movie_title').val(),
+            release_date: $('#release_date').val(),
+            genres: $('#genres').val(),
+            imdb_rating: $('#imdb_rating').val(),
+            age: $('#age').val(),
+            duration: $('#duration').val(),
+            language: $('#language').val(),
+            director: $('#director').val(),
+            story: $('#story').val(),
+            image_url: $('#image_url').val(),
+            video_url: $('#video_url').val()
+          };
+
+          var datawithkey = {};
+          datawithkey[datakey]= newmovie;
+          database.ref('movies').update(datawithkey);
+          $(".add_movie").html("<div class=\"selectContainer\">  <p id=\"moviesToEdit\" >Thank You!</p></div>");
+        }
+
+        //thank you page
+/*
+        var towrite = [$('#movie_title').val() + ".html", "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\"> <head> <meta charset=\"utf-8\"> <title>" + $('#movie_title').val() + "</title> <link rel=\"stylesheet\" href=\"movies.css\"> </head> <body> <div class=\"header\"> <a href=\"home.html\"><img class=\"headerimg\" src=\"images/fast--furious-6-2013.jpeg\" alt=\"></a> </div> <div class=\"menu\"> <a class=\"menu_items\" href=\"home.html\">Home</a> <a class=\"menu_items\" href=\"movielist.html\">Movie List</a> <a class=\"menu_items\" href=\"#\">Movie News</a> <a class=\"menu_items\" href=\"ContactUs.html\">Contact Us</a> <a class=\"menu_items\" href=\"AboutUsPage.html\">About Us</a> </div> <div class=\"info\"> <h1 class=\"info_title\" id=\"movie_title\">" + $('#movie_title').val() + "</h1> <div class=\"Horizontal_Line\"> </div> <img class=\"poster\" src=\"" + $('#image_url').val() + "\" alt=\"> <div class=\"info_details\"> <div class=\"line\"> <div class=\"inner_left\"> Release Date: </div> <p class=\"inner_right\">" + $('#release_date').val() + "</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Genres: </div> <p class=\"inner_right\">" + $('#genres').val() + "</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Imdb Rating: </div> <p class=\"inner_right\">" + $('#imdb_rating').val() + "/10</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Age: </div> <p class=\"inner_right\">" + $('#age').val() + "</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Duration: </div> <p class=\"inner_right\">" + $('#duration').val() + "</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Language: </div> <p class=\"inner_right\">" + $('#language').val() + "</p> </div> <div class=\"line Color\"> <div class=\"inner_left\"> Director: </div> <p class=\"inner_right\">" + $('#director').val() + "</p> </div> <div class=\"line\"> <div class=\"inner_left\"> Story: </div> <p class=\"inner_right\">" + $('#story').val() + "</p> </div> </div> </div> <div class=\"SecondPage\"> <h2 class=\"info_title\">Movie Player</h2> <div class=\"Horizontal_Line\"> </div> </div> <div class=\"player\"> <iframe class=\"player_area\" src=\"" + $('#video_url').val() + "\" width=\"100%\" height=\"100%\" allowfullscreen=\"allowfullscreen\"></iframe> </div> <div class=\"footer\"> <p class=\"footer_first\">Copyright @ Suhaib & Muhannad</p> </div> </body> </html>"];
+
+        console.log(towrite);
+        $.post("write.php", {
+          write: towrite
+        }, function(data, status){
+          console.log("Done");
+        });
+*/
+      });
+    </script>
+
+
+    <div class="footer LeftFloat FullWidth">
+        <div class="FooterLeft LeftFloat">
+          Copyright @ Suhaib & Muhannad
+        </div>
+        <div class="FooterRight LeftFloat SpaceBetweenBorder HalfWidth">
+          <a href="LogInPage.html" class="decoration TextColor FooterLinksAndTitle">LogInAdmin</a>
+          <a href="ContactUs.html" class="border decoration TextColor FooterLinksAndTitle">ContactUs</a>
+          <a href="AboutUsPage.html" class="border decoration TextColor FooterLinksAndTitle">AboutUs</a>
+        </div>
+    </div>
+  </body>
+</html>
